@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Vega-Embed with Local CSV</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <h1>Testing Vega-Embed with Local Flask-Served CSV</h1>
+
+    <h2>Test 1: Direct URL Access</h2>
+    <p>Open this URL in a new tab: <a href="http://localhost:7001/examples/assets/data/annual_jobs.csv" target="_blank">http://localhost:7001/examples/assets/data/annual_jobs.csv</a></p>
+
+    <h2>Test 2: Vega-Lite Visualization</h2>
+    <div id="vis"></div>
+
+    <h2>Test 3: Check Console</h2>
+    <p>Open browser console (F12) to see if there are any CORS or loading errors</p>
+
+    <script type="text/javascript">
+        var spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "http://localhost:7001/examples/assets/data/annual_jobs.csv",
+                "format": {"type": "csv"}
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {"field": "year", "type": "temporal"},
+                "y": {"field": "value", "type": "quantitative"},
+                "color": {"field": "county", "type": "nominal"}
+            }
+        };
+
+        vegaEmbed('#vis', spec, {
+            actions: true,
+            renderer: "svg"
+        }).then(function(result) {
+            console.log("✅ Vega-Embed successfully rendered the visualization!");
+            console.log("Data loaded from:", spec.data.url);
+        }).catch(function(error) {
+            console.error("❌ Error rendering visualization:", error);
+            document.getElementById('vis').innerHTML =
+                '<div style="color: red; padding: 20px; border: 2px solid red;">' +
+                '<strong>Error:</strong> ' + error.message +
+                '</div>';
+        });
+    </script>
+</body>
+</html>

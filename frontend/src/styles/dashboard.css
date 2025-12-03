@@ -1,0 +1,91 @@
+.dashboard-container {
+  width: 100%;
+  min-height: calc(100vh - 80px); /* Account for navbar height */
+  overflow: auto;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.dashboard-controls {
+  display: flex;
+  gap: 12px;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e7ed;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.tile-control-button {
+  padding: 8px 16px;
+  border: 2px solid #e0e7ed;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  color: #1f3f5b;
+}
+
+.tile-control-button--add {
+  border-color: #0a6eb8;
+  color: #0a6eb8;
+}
+
+.tile-control-button--add:hover:not(:disabled) {
+  background-color: #0a6eb8;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.tile-control-button--remove {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.tile-control-button--remove:hover:not(:disabled) {
+  background-color: #ef4444;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.tile-control-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.tile-control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #cbd5e1;
+  color: #94a3b8;
+}
+
+.dashboard-container .tiles-container {
+  flex: 1;
+  min-height: auto;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    height: calc(100vh - 120px); /* Account for taller navbar on mobile */
+  }
+
+  .dashboard-controls {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .tile-control-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+

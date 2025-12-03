@@ -1,0 +1,62 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(12, 96, 160, 0.14), transparent 55%),
+    radial-gradient(circle at 85% 5%, rgba(12, 96, 160, 0.18), transparent 50%),
+    linear-gradient(180deg, #f1f5fb 0%, #f7fafc 60%, #f3f4f7 100%);
+}
+
+.app-content {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: calc(100% - 3rem);
+  padding: 2.5rem 0 3rem;
+}
+
+/* Override constraints for dashboard page */
+.app-content:has(.dashboard-container) {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.page-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(13, 77, 128, 0.12);
+  padding: 2.5rem;
+  border: 1px solid rgba(11, 92, 157, 0.08);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page-section h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 650;
+  color: #0b4f85;
+}
+
+.page-section p {
+  margin: 0;
+  color: #2a4a69;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    width: calc(100% - 2rem);
+    padding-top: 1.75rem;
+  }
+
+  .page-section {
+    padding: 2rem;
+  }
+}

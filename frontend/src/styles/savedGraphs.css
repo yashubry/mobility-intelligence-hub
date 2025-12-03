@@ -1,0 +1,373 @@
+<<<<<<< HEAD
+.saved-graphs-section {
+  min-height: auto;
+}
+
+.saved-graphs-header {
+  margin-bottom: 2rem;
+}
+
+.saved-graphs-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.empty-message {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.saved-graphs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.saved-graph-card {
+  background: #ffffff;
+  border: 1px solid #e0e7ed;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.saved-graph-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.saved-graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e0e7ed;
+}
+
+.saved-graph-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.saved-graph-date {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.saved-graph-tile {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button:hover {
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}
+
+.saved-graph-container {
+  flex: 1;
+  min-height: 300px;
+  max-height: 500px;
+  overflow: auto;
+  padding: 1.25rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for vega-embed charts in saved graphs */
+.saved-graph-container > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saved-graph-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.saved-graph-container .empty-graph {
+  color: #94a3b8;
+  font-size: 14px;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .saved-graphs-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .saved-graph-card {
+    border-radius: 8px;
+  }
+
+  .saved-graph-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .saved-graph-container {
+    min-height: 250px;
+    max-height: 400px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+=======
+.saved-graphs-page {
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.saved-graphs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.saved-graphs-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.clear-all-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.clear-all-button:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+  transform: translateY(-1px);
+}
+
+.clear-all-button:active {
+  transform: translateY(0);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.empty-state-icon {
+  color: #cbd5e1;
+  margin-bottom: 24px;
+  stroke-width: 1.5;
+}
+
+.empty-state h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 12px 0;
+}
+
+.empty-state p {
+  font-size: 16px;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* Saved Graphs Grid */
+.saved-graphs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 24px;
+}
+
+.saved-graph-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.2s;
+  border: 1px solid #e2e8f0;
+}
+
+.saved-graph-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.graph-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+}
+
+.graph-metadata {
+  flex: 1;
+  min-width: 0;
+}
+
+.graph-prompt {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.graph-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.graph-dataset,
+.graph-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.delete-button {
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.delete-button:hover {
+  background: #fef2f2;
+  border-color: #fecaca;
+  transform: scale(1.1);
+}
+
+.saved-graph-container {
+  padding: 20px;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.render-error {
+  color: #ef4444;
+  font-size: 14px;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fef2f2;
+  border-radius: 8px;
+}
+
+/* Vega-Lite Embed Styling */
+.saved-graph-container .vega-embed {
+  width: 100%;
+}
+
+.saved-graph-container .vega-embed details {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .saved-graphs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .saved-graphs-page {
+    padding: 20px;
+  }
+
+>>>>>>> origin/custom_graph_implementation
+  .saved-graphs-grid {
+    grid-template-columns: 1fr;
+  }
+
+<<<<<<< HEAD
+  .saved-graph-container {
+    min-height: 200px;
+    max-height: 350px;
+  }
+}
+
+=======
+  .saved-graphs-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .clear-all-button {
+    width: 100%;
+  }
+}
+>>>>>>> origin/custom_graph_implementation
