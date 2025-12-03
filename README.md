@@ -238,11 +238,6 @@ mobility-intelligence-hub/
 - **[Resume Section](RESUME_SECTION.md)** - Professional project description for resumes
 
 ---
-
-## Contributing
-
-This project was developed for **Code for Good - JPMorgan Chase**. For contributions or questions, please open an issue or contact the development team.
-
 ---
 
 ## License
@@ -254,7 +249,6 @@ This project is part of the Code for Good initiative. Please refer to the origin
 ## Acknowledgments
 
 - **CareerRise** for the mission and data
-- **JPMorgan Chase Code for Good** for the opportunity
 - **Stanford NL4DV** team for the natural language visualization library
 - **OpenAI** for GPT-4 API
 - **Stripe** for payment processing infrastructure
